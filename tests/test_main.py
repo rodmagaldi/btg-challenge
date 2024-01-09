@@ -1,7 +1,14 @@
+"""
+Test suite
+"""
+
 import pytest
 from app import create_app
 
 class TestGame:
+    """
+    Tests the endpoint for playing the game in is different variations
+    """
     @pytest.fixture(autouse=True)
     def setup(self):
         self.app = create_app()
