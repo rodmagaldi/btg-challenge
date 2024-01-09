@@ -81,4 +81,5 @@ def play_game(input_a: str, input_b: str) -> Tuple[str or None, str]:
         if input_a == win_scenario["beats"]:
             return input_b, win_scenario['message']
 
+    # unreachable code
     return None, "Ocorreu um erro inesperado."

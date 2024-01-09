@@ -23,9 +23,11 @@ def rock_paper_scissors_lizard_spock():
     input_errors = []
 
     if player_one_choice not in VALID_CHOICES:
-        input_errors.append(f"Player one choice {player_one_choice} is invalid. Choice must be one of: {', '.join(VALID_CHOICES)}.")
+        input_errors.append(
+            f"Player one choice {player_one_choice} is invalid. Choice must be one of: {', '.join(VALID_CHOICES)}.")
     if player_two_choice not in VALID_CHOICES:
-        input_errors.append(f"Player two choice {player_two_choice} is invalid. Choice must be one of: {', '.join(VALID_CHOICES)}.")
+        input_errors.append(
+            f"Player two choice {player_two_choice} is invalid. Choice must be one of: {', '.join(VALID_CHOICES)}.")
 
     if len(input_errors) > 0:
         return jsonify({"errors": input_errors}), 400
