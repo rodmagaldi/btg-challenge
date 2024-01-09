@@ -7,7 +7,7 @@ from app import create_app
 
 class TestGame:
     """
-    Tests the endpoint for playing the game in is different variations
+    Tests the endpoint for playing the game in its different variations
     """
     @pytest.fixture(autouse=True)
     def setup(self):
