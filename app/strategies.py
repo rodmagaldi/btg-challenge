@@ -1,3 +1,7 @@
+"""
+Strategies
+"""
+
 from app.exceptions import InvalidChoiceException
 
 
@@ -8,6 +12,18 @@ class GeneralStrategy:
     """
 
     def determine_winner(self, player_one_choice, player_two_choice, valid_choices=None, win_conditions=None):
+        """
+        Determines who the winner is between two inputs in the game.
+        Will throw an exception if one or both of the choices is not valid
+
+        Inputs:
+        - player_one_choice (string)
+        - player_two_choice (string)
+
+        Outputs:
+        - either the winner or None, if there was a tie
+        - a message that indicates the outcome of the game
+        """
         if player_one_choice not in valid_choices or player_two_choice not in valid_choices:
             raise InvalidChoiceException(f"Choices must be one of: {', '.join(valid_choices)}.")
 
@@ -60,6 +76,7 @@ class RockPaperScissorsStrategy(GeneralStrategy):
             valid_choices=self.valid_choices,
             win_conditions=self.win_conditions
         )
+
 
 class RockPaperScissorsLizardSpockStrategy(GeneralStrategy):
     """
@@ -127,4 +144,3 @@ class RockPaperScissorsLizardSpockStrategy(GeneralStrategy):
             valid_choices=self.valid_choices,
             win_conditions=self.win_conditions
         )
-
