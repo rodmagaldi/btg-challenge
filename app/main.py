@@ -2,12 +2,12 @@
 Main Flask app to play rock-paper-scissors-lizard-spock
 """
 
-from flask import Flask, request, jsonify
-from utils import play_game, VALID_CHOICES
+from flask import Blueprint, request, jsonify
+from app.utils import play_game, VALID_CHOICES
 
-app = Flask(__name__)
+main = Blueprint('main', __name__)
 
-@app.route('/', methods=['POST'])
+@main.route('/', methods=['POST'])
 def rock_paper_scissors_lizard_spock():
     """
     Inputs:
